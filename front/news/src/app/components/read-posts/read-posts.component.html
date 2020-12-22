@@ -1,0 +1,46 @@
+<!-- <header class="news-type">
+    <button (click)="switchToNew(true)">New</button>
+    <button (click)="switchToNew(false)">Archived</button>
+</header> -->
+
+<div (click)="scrollBottom()" class="add-new-btn">
+    +
+</div>
+
+<header>
+    <nav>
+        <a routerLink="/">Home</a>
+        <a routerLink="/read-posts/new">New posts</a>
+        <a routerLink="/read-posts/archive">Archive</a>
+    </nav>
+</header>
+
+<section class="container">
+    <div class="post-container">
+        <app-post-list [posts]="posts" (onArchive)="postArchived($event)"></app-post-list>
+    </div>
+    <div class="new-post">
+        <div class="new-post-form">
+            <h1>
+                Unete a nuestra comunidad <br />
+                compartiendo tus pensamientos !
+            </h1>
+
+            <div class="form-error" *ngIf="formError != ''">
+                {{ formError }}
+            </div>
+
+            <div class="form-fields">
+                <app-input label="Autor" #author></app-input>
+                <app-input label="Titulo" #title></app-input>
+
+                <textarea class="text-area" #text></textarea>
+
+                <button class="share-now-btn" (click)="submitPost()">
+                    Comparte ahora!
+                </button>
+            </div>
+        </div>
+    </div>
+
+</section>

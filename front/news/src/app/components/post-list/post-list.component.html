@@ -1,0 +1,11 @@
+<div class="post-list-container">
+    <ng-container *ngIf="posts && posts.length > 0">
+        <app-post (onArchive)="postArchived(post)" [post]="post" *ngFor="let post of posts"></app-post>
+    </ng-container>
+    
+    <ng-container *ngIf="!posts || posts.length <= 0">
+        <div class="no-posts">
+            No post available.
+        </div>
+    </ng-container>
+</div>

@@ -1,0 +1,135 @@
+:host {
+    
+}
+
+.fade-animation {
+    animation-name: fade;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+        transform: scale(1) rotateX(0deg);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1) rotateX(75deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0) rotateX(75deg);
+    }
+}
+
+.post {
+    background-color: #fff;
+    padding: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transform-origin: bottom;
+    opacity: 0.8;
+    transition: all 400ms;
+    will-change: transform scale;
+
+    &.new {
+        opacity: 0;
+        transform: scale(0) rotateX(75deg);
+
+        animation-name: fade;
+        animation-direction: reverse;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+    &:hover {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+
+    .title {
+        margin-bottom: 1em;
+        display: flex;
+        align-items: center;
+
+        & > .text {
+            flex-basis: 97%;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            font-weight: bold;
+            color: rgb(70, 70, 224);
+        }
+
+        .options {
+            flex-basis: 3%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:focus, &:focus-within {
+                outline: none;
+
+                & > .menu {
+                    display: block;
+                }
+            }
+
+            img {   
+                width: 16px;
+                height: 16px;
+            }
+
+            .menu {
+                position: absolute;
+                background-color: rgb(246, 246, 246);
+                border: 1px solid #aaa;
+                top: 100%;
+                left: 0;
+                transform: translateX(-80%);
+                display: none;
+
+                ul {
+                    list-style-type: none;
+
+                    a {
+                        text-decoration: none;
+                        padding: 0.5em;
+                        display: inline-block;
+                        opacity: 0.7;
+                        color: #000;
+                        transition: all 500ms;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            margin-right: 0.5em;
+                        }
+                        
+                        &:hover {
+                            opacity: 1;
+                            background-color: rgb(235, 235, 235);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & > .text {
+        text-align: justify;
+        margin-bottom: 1em;
+    }
+
+    .info {
+        color: #aaa;
+        font-size: 0.9em;
+    }   
+}

@@ -1,0 +1,18 @@
+.post-list-container {
+    app-post {
+        display: block;
+        
+        &:not(:last-child) {
+            margin-bottom: 1em;
+        }
+    }
+
+    .no-posts {
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+    }
+}

@@ -40,3 +40,7 @@ Go to **front/news** and run the command bellow:
     ng serve --open --port 4200 --host 0.0.0.0
 
 You can change the port if you want.
+
+## VIDEO DEMO
+
+You can find video demonstration [here](https://www.youtube.com/watch?v=2gEeaC4zxEA "here")
